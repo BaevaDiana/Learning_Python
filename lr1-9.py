@@ -19,3 +19,15 @@ n=int(input('Пирожков: '))
 sum = n * (100 * a + b)
 print('Нужно заплатить: ')
 print(sum // 100, sum % 100,sep='.')
+
+#4 ЛР
+#просуммируем все слагаемые,затем вычтем
+n = int(input('Введите N:'))
+sum = 0
+for i in range(1, n + 1):
+    sum += i
+print('Введите номера оставшихся карточек :')
+for i in range(n - 1):
+    sum -= int(input())
+print('Потерячнная карточка:',sum)
+
