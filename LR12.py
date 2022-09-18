@@ -7,9 +7,11 @@
 
 #импортируем системный модуль
 import sys
+#импортируем модуль регулярных выражений
+import re
 #Отслеживаем,чтобы программа обязательно запускалась с одним переданным параметром
 if len(sys.argv) != 2:
-    print("Имя файла необходимо передать в качестве аргумента.")
+    print("Ошибка!Имя файла необходимо передать в качестве аргумента.")
     quit()
 #Открываем на чтение файл, имя которого было передано в командной строке
 inf = open(sys.argv[1], "r")
@@ -21,9 +23,10 @@ while line != "":
     line = line.replace(":", " ")
     line = line.replace("!", " ")
     line = line.replace("?", " ")
+    line = line.replace(" ", "")
+    line = re.sub(r'|[\d]+',"", line)#регулряное выражение для удаления всех цифр
     line = line.lower()
     line = line.rstrip()
-    line = line.replace(" ","")
     for letter in line:
         if letter in frequence:
             frequence[letter] += 1
