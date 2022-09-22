@@ -7,8 +7,8 @@
 # Создайте список всех покупателей, а для каждого покупателя подсчитайте количество приобретенных им единиц каждого вида товаров.
 # Список покупателей, а также список товаров для каждого покупателя нужно выводить в лексикографическом порядке.
 
-from collections import defaultdict #создаём стандартный словарь
-from sys import stdin
+from collections import defaultdict # из коллекции импортируем стандартный словарь
+from sys import stdin # импортируем модуль для работы с вводом данных
 
 dict = defaultdict(lambda: defaultdict(int))
 for line in stdin.readlines():
