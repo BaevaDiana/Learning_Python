@@ -20,3 +20,4 @@ button1.pack()
 button2 = tkinter.Button(window, text='Quit', command=click2)
 button2.pack()
 window.mainloop()
+
